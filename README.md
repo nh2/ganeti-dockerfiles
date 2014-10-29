@@ -37,8 +37,22 @@ Keep in mind that Linux containers do not provide perfect security isolation.
 Keep in mind that by using the above you trust the Docker Hub and your network to deliver the container without backdoors.
 You can check that you got the right container with:
 
+**For nh2docker/ganeti-ubuntu1404-code-syshs:**
+
 ```shell
 /usr/bin/test "$(docker export $(docker create nh2docker/ganeti-ubuntu1404-code-syshs true) | tar xO | sha1sum -b)" = "6a7b50c269ff55ccec613a4bb64a1057b3908c37 *-" && echo good || echo bad
+```
+
+**For nh2docker/ganeti-ubuntu1204-code-syshs:**
+
+```shell
+/usr/bin/test "$(docker export $(docker create nh2docker/ganeti-ubuntu1204-code-syshs true) | tar xO | sha1sum -b)" = "d8b2d9a8c03383fda45dc5becbfab7fd7c128e26 *-" && echo good || echo bad
+```
+
+**For nh2docker/ganeti-debian7-code-syshs:**
+
+```shell
+/usr/bin/test "$(docker export $(docker create nh2docker/ganeti-debian7-code-syshs true) | tar xO | sha1sum -b)" = "6b8c63ab8d044929b02282b28903eef6766575d2 *-" && echo good || echo bad
 ```
 
 Container flavours explained
